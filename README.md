@@ -1,8 +1,8 @@
-umidmean
+Upper midmean
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Compute module.
+> Computes the [upper interquartile mean](http://www.jstor.org/stable/1268431) (upper midmean) of a numeric array.
 
 
 ## Installation
@@ -19,18 +19,40 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var foo = require( 'compute-umidmean' );
+var umidmean = require( 'compute-umidmean' );
 ```
 
-#### foo( arr )
+#### umidmean( arr[, sorted] )
 
-What does this function do?
+Computes the [upper midmean](http://www.jstor.org/stable/1268431) of a numeric `array`.
+
+``` javascript
+var unsorted = [ 5, 6, 7, 2, 1, 8, 4, 3 ];
+
+var mean = umidmean( unsorted );
+// returns 
+```
+
+If the input `array` is already `sorted` in __ascending__ order, set the optional second argument to `true`.
+
+``` javascript
+var sorted = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
+
+var mean = umidmean( sorted, true );
+// returns 
+```
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-umidmean' );
+var data = new Array( 100 );
+
+for ( var i = 0; i < data.length; i++ ) {
+    data[ i ] = Math.round( Math.random()*100 );
+}
+
+console.log( umidmean( data ) );
 ```
 
 To run the example code from the top-level application directory,
@@ -38,6 +60,10 @@ To run the example code from the top-level application directory,
 ``` bash
 $ node ./examples/index.js
 ```
+
+## Notes
+
+If provided an unsorted input `array`, the function is `O( N log(N) + m )`, where `N` is the input `array` length and `m` is the number of values located between the first and third quartiles of the upper range. If the input `array` is already sorted in __ascending__ order, the function is `O(m)`.
 
 
 ## Tests

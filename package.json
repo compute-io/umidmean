@@ -10,6 +10,10 @@
     {
       "name": "Rebekah Smith",
       "email": "rebekahjs17@gmail.com"
+    },
+    {
+      "name": "Athan Reines",
+      "email": "kgryte@gmail.com"
     }
   ],
   "scripts": {
@@ -25,7 +29,14 @@
   "keywords": [
     "compute.io",
     "compute",
-    "computation"
+    "computation",
+    "upper midmean",
+    "midmean",
+    "interquartile mean",
+    "stats",
+    "statistics",
+    "maths",
+    "mathematics"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/umidmean/issues"
