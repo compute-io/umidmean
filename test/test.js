@@ -73,7 +73,7 @@ describe( 'compute-umidmean', function tests() {
 		var data, expected;
 
 		data = [ 5, 8, 4, 38, 8, 6, 9, 7, 7, 3, 1, 6, 7 ];
-		expected = ;
+		expected = 8;
 
 		// Unsorted test:
 		assert.closeTo( umidmean( data ), expected, 1e-10 );
