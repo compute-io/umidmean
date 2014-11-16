@@ -30,7 +30,7 @@ Computes the [upper midmean](http://www.jstor.org/stable/1268431) of a numeric `
 var unsorted = [ 5, 6, 7, 2, 1, 8, 4, 3 ];
 
 var mean = umidmean( unsorted );
-// returns 
+// returns 6.5
 ```
 
 If the input `array` is already `sorted` in __ascending__ order, set the optional second argument to `true`.
@@ -39,7 +39,7 @@ If the input `array` is already `sorted` in __ascending__ order, set the optiona
 var sorted = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
 
 var mean = umidmean( sorted, true );
-// returns 
+// returns 6.5
 ```
 
 
@@ -65,6 +65,13 @@ $ node ./examples/index.js
 
 If provided an unsorted input `array`, the function is `O( N log(N) + m )`, where `N` is the input `array` length and `m` is the number of values located between the first and third quartiles of the upper range. If the input `array` is already sorted in __ascending__ order, the function is `O(m)`.
 
+The upper midmean includes the values located between *but not including* Q1 and Q3 of the values above the median. In the following examples, the values included in the umidmean are in bold.
+
+[1,2,3,4,5,__6,7__,8]  
+Returns 6.5
+
+[1,2,3,4,5,6,7,8,9,10,__11,12,13,14__,15,16]  
+Returns 12.5
 
 ## Tests
 

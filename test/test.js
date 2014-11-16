@@ -69,14 +69,27 @@ describe( 'compute-umidmean', function tests() {
 		}
 	});
 
-	it( 'should compute the upper interquartile mean (umidmean)', function test() {
+	it( 'should throw an error if provided an array of insufficient length', function test() {
+		var data = [ 2, 5, 7, 7, 1 ];
+
+		function badValue( array ) {
+			return function() {
+				umidmean( array );
+			};
+		}		
+
+		expect( badValue( data ) ).to.throw( TypeError );
+
+	});
+
+	it( 'should compute the umidmean when len divides by 8', function test() {
 		var data, expected;
 
-		data = [ 5, 8, 4, 38, 8, 6, 9, 7, 7, 3, 1, 6, 7 ];
-		expected = 8;
+		data = [ 15, 9, 4, 12, 14, 8, 2, 5, 16, 1, 10, 3, 6, 7, 11, 13 ];
+		expected = 12.5;
 
 		// Unsorted test:
-		assert.closeTo( umidmean( data ), expected, 1e-10 );
+		assert.strictEqual( umidmean( data ), expected );
 
 		// Sort the data:
 		data.sort( function sort( a, b ) {
@@ -84,7 +97,25 @@ describe( 'compute-umidmean', function tests() {
 		});
 
 		// Sorted test:
-		assert.closeTo( umidmean( data, true ), expected, 1e-10 );
+		assert.strictEqual( umidmean( data, true ), expected );
+	});
+
+	it( 'should compute the umidmean when len does not divide by 8', function test() {
+		var data, expected;
+
+		data = [ 9, 4, 12, 8, 2, 5, 1, 10, 3, 6, 7, 11 ];
+		expected = 9.5;
+
+		// Unsorted test:
+		assert.strictEqual( umidmean( data ), expected );
+
+		// Sort the data:
+		data.sort( function sort( a, b ) {
+			return a - b;
+		});
+
+		// Sorted test:
+		assert.strictEqual( umidmean( data, true ), expected );
 	});
 
 });
