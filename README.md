@@ -70,8 +70,8 @@ The upper midmean includes the values located between *but not including* Q1 and
 [1,2,3,4,5,__6,7__,8]  
 Returns 6.5
 
-[1,2,3,4,5,6,7,8,__9,10__,11, 12] 
-Returns 8
+[1,2,3,4,5,6,7,8,__9,10__,11,12]  
+Returns 9.5
 
 ## Tests
 
