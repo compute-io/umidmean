@@ -82,7 +82,7 @@ describe( 'compute-umidmean', function tests() {
 
 	});
 
-	it( 'should compute the umidmean when len divides by 8', function test() {
+	it( 'should compute the umidmean when the array length divides by 8', function test() {
 		var data, expected;
 
 		data = [ 15, 9, 4, 12, 14, 8, 2, 5, 16, 1, 10, 3, 6, 7, 11, 13 ];
@@ -100,7 +100,7 @@ describe( 'compute-umidmean', function tests() {
 		assert.strictEqual( umidmean( data, true ), expected );
 	});
 
-	it( 'should compute the umidmean when len does not divide by 8', function test() {
+	it( 'should compute the umidmean when the array length does not divide by 8', function test() {
 		var data, expected;
 
 		data = [ 9, 4, 12, 8, 2, 5, 1, 10, 3, 6, 7, 11 ];

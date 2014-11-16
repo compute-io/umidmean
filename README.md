@@ -2,7 +2,7 @@ Upper midmean
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes the [upper interquartile mean](http://www.jstor.org/stable/1268431) (upper midmean) of a numeric array. This is equivalent to the values between Q1 and Q3 for the set of values above the median of the data set.
+> Computes the [upper interquartile mean](http://www.jstor.org/stable/1268431) (upper midmean) of a numeric array. This is equivalent to the values between the first and third quartiles for the set of values above the median of the data set.
 
 
 ## Installation
@@ -65,13 +65,11 @@ $ node ./examples/index.js
 
 If provided an unsorted input `array`, the function is `O( N log(N) + m )`, where `N` is the input `array` length and `m` is the number of values located between the first and third quartiles of the upper range. If the input `array` is already sorted in __ascending__ order, the function is `O(m)`.
 
-The upper midmean includes the values located between *but not including* Q1 and Q3 for the set of values above the median. In the following examples, the values included in the umidmean are in bold.
+The upper midmean includes the values located between *but not including* the first and third quartiles for the set of values above the median. In the following examples, the values included in the umidmean are in bold.
 
-[1,2,3,4,5,__6,7__,8]  
-Returns 6.5
+[1,2,3,4,5,__6,7__,8] —> umidmean: 6.5
 
-[1,2,3,4,5,6,7,8,__9,10__,11,12]  
-Returns 9.5
+[1,2,3,4,5,6,7,8,__9,10__,11,12] —> umidmean: 9.5
 
 ## Tests
 
