@@ -2,7 +2,7 @@ Upper midmean
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes the [upper interquartile mean](http://www.jstor.org/stable/1268431) (upper midmean) of a numeric array. 
+> Computes the [upper interquartile mean](http://www.jstor.org/stable/1268431) (upper midmean) for a numeric array. 
 
 ## Installation
 
@@ -23,7 +23,7 @@ var umidmean = require( 'compute-umidmean' );
 
 #### umidmean( arr[, sorted] )
 
-Computes the [upper midmean](http://www.jstor.org/stable/1268431) of a numeric `array`. This is equivalent to the values between the first and third quartiles for the set of values above the median of the data set.
+Computes the [upper midmean](http://www.jstor.org/stable/1268431) for a numeric `array`. This is equivalent to the values between the first and third quartiles for the set of values above the median of the data set.
 
 
 ``` javascript
