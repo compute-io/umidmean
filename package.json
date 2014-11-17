@@ -1,7 +1,7 @@
 {
   "name": "compute-umidmean",
   "version": "1.0.0",
-  "description": "Compute module.",
+  "description": "Computes the upper interquartile mean (upper midmean) for a numeric array.",
   "author": {
     "name": "Rebekah Smith",
     "email": "rebekahjs17@gmail.com"

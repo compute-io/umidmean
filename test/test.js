@@ -78,7 +78,7 @@ describe( 'compute-umidmean', function tests() {
 			};
 		}		
 
-		expect( badValue( data ) ).to.throw( TypeError );
+		expect( badValue( data ) ).to.throw( Error );
 
 	});
 
