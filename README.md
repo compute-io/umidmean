@@ -68,7 +68,7 @@ $ node ./examples/index.js
 
 If provided an unsorted input `array`, the function is `O( N log(N) + m )`, where `N` is the input `array` length and `m` is the number of values located between the first and third quartiles of the upper range. If the input `array` is already sorted in __ascending__ order, the function is `O(m)`.
 
-The upper midmean includes the values located between *but not including* the first and third quartiles for the set of values above the median. In the following examples, the values included in the umidmean are in bold.
+The upper midmean includes the values located between *but not including* the first and third quartiles of the upper range. In the following examples, the values included in the upper midmean are in bold.
 
 *	[1,2,3,4,5,__6,7__,8] —> umidmean: 6.5
 
